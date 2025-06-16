@@ -8,8 +8,6 @@ services:
     image: client
     volumes:
       - ./:/app
-    env_file:
-      - .env.local
     restart: unless-stopped
     ports:
-      - 3300:3300
+      - 3000:3000
