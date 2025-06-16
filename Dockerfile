@@ -12,7 +12,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN bun run build
+RUN bun install --production --frozen-lockfile
 
 FROM oven/bun:latest AS stage
 
