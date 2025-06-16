@@ -24,4 +24,6 @@ COPY --from=build /app/public public
 COPY --from=build /app/package.json .
 COPY --from=build /app/next.config.mjs .
 
+EXPOSE 3300
+
 CMD ["bun", "start"]
