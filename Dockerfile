@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json bun.lockb ./
 
-RUN bun install
+RUN bun install --production --frozen-lockfile
 
 FROM dependencies AS build
 
@@ -12,7 +12,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN bun install --production --frozen-lockfile
+RUN bun run build
 
 FROM oven/bun:latest AS stage
 
