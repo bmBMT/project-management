@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  client:
+    build:
+      target: stage
+    image: client
+    volumes:
+      - ./:/app
+    env_file:
+      - .env.local
+    restart: unless-stopped
+    ports:
+      - 3300:3300
